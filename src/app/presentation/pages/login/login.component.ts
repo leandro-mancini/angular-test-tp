@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { IUsuarioController } from '../../../core/interfaces/controllers/iusuario-controller';
+import { UsuarioModel } from '../../../core/domain/entity/usuario-model';
+import { finalize } from 'rxjs/operators';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private UsuarioController: IUsuarioController
   ) { }
 
   ngOnInit() {
@@ -29,7 +34,14 @@ export class LoginComponent implements OnInit {
   login() {
     this.isLoading = true;
 
-    console.log(this.form.value);
+    this.UsuarioController
+      .login(this.form.value)
+      .pipe(finalize(() => {
+        this.isLoading = false;
+      }))
+      .subscribe((user: UsuarioModel) => {
+        console.log(user);
+      });
   }
 
 }

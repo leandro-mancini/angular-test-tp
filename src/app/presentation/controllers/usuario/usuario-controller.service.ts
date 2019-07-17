@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { IUsuarioController } from 'src/app/core/interfaces/controllers/iusuario-controller';
-import { of, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
+
 import { UsuarioModel } from 'src/app/core/domain/entity/usuario-model';
-import { UsuarioRequest } from '../../../data/request/usuario-request';
-import { UsuarioUseCase } from '../../../core/usecases/usuario/usuario-use-case';
 import { IUsuarioUseCase } from 'src/app/core/interfaces/usecases/iusuario-use-case';
+import { IUsuarioController } from 'src/app/core/interfaces/controllers/iusuario-controller';
+import { UsuarioRequest } from 'src/app/data/request/usuario-request';
 
 @Injectable({
   providedIn: 'root'
