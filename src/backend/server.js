@@ -14,6 +14,7 @@ module.exports = () => {
 
   data.motoristas = [
     {
+      "id": 1,
       "name": "Pouca Tripa",
       "birth_date": "1976-09-22T00:00:00",
       "state": "São Paulo",
@@ -45,6 +46,7 @@ module.exports = () => {
       ]
     },
     {
+      "id": 2,
       "name": "Quase nada",
       "birth_date": "1986-09-22T00:00:00",
       "state": "Rio de Janeiro",

@@ -1,9 +1,9 @@
 import { DomainModel } from './base/domain-model';
 
 export class DocumentsModel extends DomainModel {
-  expires_at: Date;
-  country: string;
-  number: string;
-  doc_type: string;
-  category: string;
+  expires_at: Date = null;
+  country: string = null;
+  number: string = null;
+  doc_type: string = null;
+  category: string = null;
 }

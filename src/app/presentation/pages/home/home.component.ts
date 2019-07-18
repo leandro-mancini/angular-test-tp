@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
+import { IMotoristaController } from 'src/app/core/interfaces/controllers/imotorista-controller';
+import { finalize } from 'rxjs/operators';
+import { MotoristaModel } from 'src/app/core/domain/entity/motorista-model';
+
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -38,15 +42,35 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  constructor() { }
+  isLoading: boolean;
+  drivers: MotoristaModel[] = [];
+  displayedColumns: string[] = ['name', 'birth_date', 'state', 'city', 'action'];
+  dataSource: any;
+
+  constructor(
+    private motoristaController: IMotoristaController
+  ) { }
 
   ngOnInit() {
-    this.dataSource.paginator = this.paginator;
+    // this.dataSource.paginator = this.paginator;
+
+    this.getDrivers();
+  }
+
+  getDrivers() {
+    this.isLoading = true;
+
+    this.motoristaController.get()
+    .pipe(finalize(() => {
+      this.isLoading = false;
+    }))
+    .subscribe((driver: MotoristaModel) => {
+      console.log(driver);
+      this.drivers.push(driver);
+      this.dataSource = new MatTableDataSource(this.drivers);
+    });
   }
 
 }

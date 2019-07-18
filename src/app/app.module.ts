@@ -9,13 +9,6 @@ import { CoreModule } from './core/core.module';
 import { InfraModule } from './infra/infra.module';
 import { DataModule } from './data/data.module';
 
-import { IUsuarioController } from './core/interfaces/controllers/iusuario-controller';
-import { UsuarioControllerService } from './presentation/controllers/usuario/usuario-controller.service';
-import { IUsuarioUseCase } from './core/interfaces/usecases/iusuario-use-case';
-import { UsuarioUseCase } from './core/usecases/usuario/usuario-use-case';
-import { IUsuarioRepository } from './core/interfaces/repository/iusuario-repository';
-import { UsuarioRepository } from './data/repository/usuario/usuario-repository';
-
 @NgModule({
   declarations: [
     AppComponent
@@ -28,11 +21,6 @@ import { UsuarioRepository } from './data/repository/usuario/usuario-repository'
     InfraModule,
     PresentationModule,
     NgbModule.forRoot()
-  ],
-  providers: [
-    { provide: IUsuarioController, useClass: UsuarioControllerService },
-    { provide: IUsuarioUseCase, useClass: UsuarioUseCase },
-    { provide: IUsuarioRepository, useClass: UsuarioRepository },
   ],
   bootstrap: [AppComponent]
 })
