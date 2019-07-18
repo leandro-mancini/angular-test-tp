@@ -15,7 +15,7 @@ export class UsuarioRepository implements IUsuarioRepository {
 
   login(param: UsuarioRequest): Observable<UsuarioModel> {
     return this.http
-      .get<UsuarioRequest>(environment.serverUrl + '/usuarios?username=' + param.username + '&senha=' + param.password + '')
+      .get<UsuarioRequest>(environment.serverUrl + '/usuarios?username=' + param.username + '&password=' + param.password + '')
       .pipe(map((item) => {
         if (item[0]) {
           return this.mapper.mapFrom(item[0]);

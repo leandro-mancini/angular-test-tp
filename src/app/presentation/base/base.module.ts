@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from './base.component';
 import { RouterModule } from '@angular/router';
+
+import { BaseComponent } from './base.component';
+import { AppMaterialModule } from '../../app-material.module';
 
 @NgModule({
   declarations: [BaseComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AppMaterialModule
   ]
 })
 export class BaseModule { }

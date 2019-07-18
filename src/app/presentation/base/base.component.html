@@ -1,2 +1,25 @@
-<p>base works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="justify-content-between">
+    <span>Home</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #menu="matMenu" class="menu-user">
+  <mat-card class="menu-card">
+    <mat-card-header>
+      <div mat-card-avatar class="menu-card-header-image"></div>
+      <mat-card-title>Olá, {{usuario.username}}</mat-card-title>
+      <mat-card-subtitle>{{usuario.email}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions>
+      <div class="m-0 row justify-content-end">
+        <button mat-button (click)="logout()">SAIR</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</mat-menu>
+
 <router-outlet></router-outlet>

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { finalize } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
 
 import { IUsuarioController } from '../../../core/interfaces/controllers/iusuario-controller';
 import { UsuarioModel } from '../../../core/domain/entity/usuario-model';
-import { finalize } from 'rxjs/operators';
+import { AuthService } from '../../../infra/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +20,10 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private UsuarioController: IUsuarioController
+    private authService: AuthService,
+    private usuarioController: IUsuarioController,
+    private snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -34,13 +40,22 @@ export class LoginComponent implements OnInit {
   login() {
     this.isLoading = true;
 
-    this.UsuarioController
+    this.usuarioController
       .login(this.form.value)
       .pipe(finalize(() => {
         this.isLoading = false;
       }))
-      .subscribe((user: UsuarioModel) => {
-        console.log(user);
+      .subscribe((usuario: UsuarioModel) => {
+        console.log(usuario);
+
+        if (usuario) {
+          this.authService.credentials = usuario;
+          this.router.navigateByUrl('/home');
+        } else {
+          this.snackBar.open('Usuário ou senha inválidos.', null, {
+            duration: 2000
+          });
+        }
       });
   }
 
