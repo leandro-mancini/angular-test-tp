@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { IMotoristaController } from 'src/app/core/interfaces/controllers/imotorista-controller';
 import { finalize } from 'rxjs/operators';
 import { MotoristaModel } from 'src/app/core/domain/entity/motorista-model';
+import { MatDialog } from '@angular/material';
+import { DialogCadastroComponent } from '../../shared/dialogs/dialog-cadastro/dialog-cadastro.component';
 
 export interface PeriodicElement {
   name: string;
@@ -50,7 +52,8 @@ export class HomeComponent implements OnInit {
   dataSource: any;
 
   constructor(
-    private motoristaController: IMotoristaController
+    private motoristaController: IMotoristaController,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -70,6 +73,16 @@ export class HomeComponent implements OnInit {
       console.log(driver);
       this.drivers.push(driver);
       this.dataSource = new MatTableDataSource(this.drivers);
+    });
+  }
+
+  newDriver() {
+    const dialogRef = this.dialog.open(DialogCadastroComponent, {
+      width: '450px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 

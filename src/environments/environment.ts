@@ -4,7 +4,6 @@ export const environment = {
   serverUrl: 'http://localhost:3000',
   defaultLanguage: 'pt-BR',
   supportedLanguages: [
-    'pt-BR',
-    'en-US'
+    'pt-BR'
   ]
 };

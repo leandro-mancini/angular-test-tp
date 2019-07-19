@@ -5,6 +5,7 @@ import { DocumentsModel } from './documents-model';
 export class MotoristaModel extends DomainModel {
   name: string = null;
   birth_date: Date = null;
+  phone: string = null;
   state: string = null;
   city: string = null;
   addresses: AddressesModel = null;
