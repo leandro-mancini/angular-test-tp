@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 import { IMotoristaUsecase } from '../../interfaces/usecases/imotorista-usecase';
 import { MotoristaModel } from '../../domain/entity/motorista-model';
 import { IMotoristaRepository } from '../../interfaces/repository/imotorista-repository';
+import { IMotoristaValidator } from '../../interfaces/validations/imotorista-validator';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import { IMotoristaRepository } from '../../interfaces/repository/imotorista-rep
 export class MotoristaUsecaseService implements IMotoristaUsecase {
 
   constructor(
-    private motoristaRepository: IMotoristaRepository
+    private motoristaRepository: IMotoristaRepository,
+    private motoristaValidator: IMotoristaValidator
   ) { }
 
   get(id?: number): Observable<MotoristaModel> {
@@ -22,7 +24,13 @@ export class MotoristaUsecaseService implements IMotoristaUsecase {
     }
   }
   insert(param: MotoristaModel): Observable<MotoristaModel> {
-    return this.motoristaRepository.insert(param);
+    const validator = this.motoristaValidator.validateFields(param);
+
+    if (validator.IsValid) {
+      return this.motoristaRepository.insert(param);
+    } else {
+      return throwError(validator.Errors);
+    }
   }
   update(param: MotoristaModel): Observable<MotoristaModel> {
     return this.motoristaRepository.update(param);

@@ -11,19 +11,27 @@
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Telefone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone ? element.phone : '-'}} </td>
+      </ng-container>
+
       <ng-container matColumnDef="birth_date">
         <th mat-header-cell *matHeaderCellDef> Data de Nasc. </th>
         <td mat-cell *matCellDef="let element"> {{element.birth_date | date : 'dd/MM/yyyy'}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="state">
-        <th mat-header-cell *matHeaderCellDef> Estado </th>
-        <td mat-cell *matCellDef="let element"> {{element.state}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="city">
-        <th mat-header-cell *matHeaderCellDef> Cidade </th>
-        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      <ng-container matColumnDef="documents">
+        <th mat-header-cell *matHeaderCellDef> Documento </th>
+        <td mat-cell *matCellDef="let element">
+          <div class="mt-2 mb-2" *ngFor="let item of element.documents">
+            <h6 class="m-0">{{item.doc_type}}</h6>
+            <p class="m-0">
+              {{item.number}}
+              <span *ngIf="item.category">/ {{item.category}}</span>
+            </p>
+          </div>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="action">

@@ -9,6 +9,8 @@ import { IMotoristaUsecase } from './interfaces/usecases/imotorista-usecase';
 import { MotoristaUsecaseService } from './usecases/motorista/motorista-usecase.service';
 import { IUsuarioValidator } from './interfaces/validations/iusuario-validator';
 import { UsuarioValidatorService } from './usecases/usuario/usuario-validator.service';
+import { IMotoristaValidator } from './interfaces/validations/imotorista-validator';
+import { MotoristaValidatorService } from './usecases/motorista/motorista-validator.service';
 
 @NgModule({
   declarations: [],
@@ -17,9 +19,12 @@ import { UsuarioValidatorService } from './usecases/usuario/usuario-validator.se
   ],
   providers: [
     { provide: IValidatorMessage, useClass: ValidatorMessageService },
+
     { provide: IUsuarioUseCase, useClass: UsuarioUseCase },
     { provide: IUsuarioValidator, useClass: UsuarioValidatorService },
+
     { provide: IMotoristaUsecase, useClass: MotoristaUsecaseService },
+    { provide: IMotoristaValidator, useClass: MotoristaValidatorService },
   ],
 })
 export class CoreModule { }

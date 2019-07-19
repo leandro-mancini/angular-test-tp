@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import * as _ from 'lodash';
 
 import { IMotoristaController } from 'src/app/core/interfaces/controllers/imotorista-controller';
 import { finalize } from 'rxjs/operators';
@@ -48,7 +49,7 @@ export class HomeComponent implements OnInit {
 
   isLoading: boolean;
   drivers: MotoristaModel[] = [];
-  displayedColumns: string[] = ['name', 'birth_date', 'state', 'city', 'action'];
+  displayedColumns: string[] = ['name', 'phone', 'birth_date', 'documents', 'action'];
   dataSource: any;
 
   constructor(
@@ -82,7 +83,17 @@ export class HomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result) {
+        const index = _.findIndex(this.drivers, ['id', result.id]);
+
+        if (index !== -1) {
+          this.drivers[index] = result;
+        } else {
+          this.drivers.push(result);
+        }
+
+        this.dataSource = new MatTableDataSource(this.drivers);
+      }
     });
   }
 

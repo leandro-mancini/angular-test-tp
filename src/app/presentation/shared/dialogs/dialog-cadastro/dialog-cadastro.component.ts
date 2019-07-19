@@ -4,6 +4,8 @@ import * as _ from 'lodash';
 
 import { IMotoristaController } from 'src/app/core/interfaces/controllers/imotorista-controller';
 import { finalize } from 'rxjs/operators';
+import { MatDialogRef } from '@angular/material';
+import { NotificationService } from '../../notification/notification.service';
 
 @Component({
   selector: 'app-dialog-cadastro',
@@ -18,7 +20,9 @@ export class DialogCadastroComponent implements OnInit {
 
   constructor(
     private motoristaController: IMotoristaController,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialogRef: MatDialogRef<DialogCadastroComponent>,
+    private notification: NotificationService
   ) {  }
 
   ngOnInit() {
@@ -26,7 +30,7 @@ export class DialogCadastroComponent implements OnInit {
   }
 
   getControl(form: FormGroup, key: string) {
-    return (<FormArray>form.controls[key]).controls;
+    return (form.controls[key] as FormArray).controls;
   }
 
   createForm() {
@@ -68,9 +72,7 @@ export class DialogCadastroComponent implements OnInit {
     .pipe(finalize(() => {
       this.isLoading = false;
     }))
-    .subscribe(res => {
-      console.log(res);
-    });
+    .subscribe(res => this.dialogRef.close(res), err => this.notification.open(err));
   }
 
 }
