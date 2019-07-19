@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
 
   newDriver() {
     const dialogRef = this.dialog.open(DialogCadastroComponent, {
-      width: '450px'
+      width: '650px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -27,6 +27,8 @@ export class DialogCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+
+    console.log(this.documents);
   }
 
   getControl(form: FormGroup, key: string) {
@@ -45,21 +47,26 @@ export class DialogCadastroComponent implements OnInit {
   createDocument(): FormGroup {
     return this.fb.group({
       number: ['', Validators.required],
-      category: ['', Validators.required],
-      doc_type: ['', Validators.required]
+      category: '',
+      doc_type: ['', Validators.required],
+      add_document: false
     });
   }
 
   addNewDocument(item: FormControl): void {
-    console.log(item);
+    item.get('add_document').setValue(true);
+
     this.documents = this.form.get('documents') as FormArray;
     this.documents.push(this.createDocument());
 
     console.log(this.documents);
   }
 
-  removeDocument(item: FormControl): void {
+  removeDocument(item: FormControl, index: number): void {
     console.log(item);
+
+    this.documents.controls.splice(index, 1);
+    this.documents.value.splice(index, 1);
   }
 
   save() {
