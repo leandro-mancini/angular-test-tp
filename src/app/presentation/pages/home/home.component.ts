@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private motoristaController: IMotoristaController,
-    public dialog: MatDialog
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -71,15 +71,27 @@ export class HomeComponent implements OnInit {
       this.isLoading = false;
     }))
     .subscribe((driver: MotoristaModel) => {
-      console.log(driver);
       this.drivers.push(driver);
       this.dataSource = new MatTableDataSource(this.drivers);
     });
   }
 
   newDriver() {
+    this.openDialog();
+  }
+
+  edit(param: MotoristaModel) {
+    this.openDialog(param);
+  }
+
+  disableEnable(param: MotoristaModel) {
+
+  }
+
+  openDialog(driver?: MotoristaModel) {
     const dialogRef = this.dialog.open(DialogCadastroComponent, {
-      width: '650px'
+      width: '650px',
+      data: driver ? driver : null
     });
 
     dialogRef.afterClosed().subscribe(result => {

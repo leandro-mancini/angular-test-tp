@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import * as _ from 'lodash';
 
 import { IMotoristaController } from 'src/app/core/interfaces/controllers/imotorista-controller';
 import { finalize } from 'rxjs/operators';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NotificationService } from '../../notification/notification.service';
+import { MotoristaModel } from '../../../../core/domain/entity/motorista-model';
+import { DocumentsModel } from 'src/app/core/domain/entity/documents-model';
 
 @Component({
   selector: 'app-dialog-cadastro',
@@ -19,6 +21,7 @@ export class DialogCadastroComponent implements OnInit {
   isLoading: boolean;
 
   constructor(
+    @Inject(MAT_DIALOG_DATA) private data: MotoristaModel,
     private motoristaController: IMotoristaController,
     private fb: FormBuilder,
     private dialogRef: MatDialogRef<DialogCadastroComponent>,
@@ -27,29 +30,37 @@ export class DialogCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
-
-    console.log(this.documents);
-  }
-
-  getControl(form: FormGroup, key: string) {
-    return (form.controls[key] as FormArray).controls;
   }
 
   createForm() {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      birth_date: ['', Validators.required],
-      phone: ['', Validators.required],
-      documents: this.fb.array([this.createDocument()])
+      id: [this.data ? this.data.id : ''],
+      name: [this.data ? this.data.name : '', Validators.required],
+      birth_date: [this.data ? this.data.birth_date : '', Validators.required],
+      phone: [this.data ? this.data.phone : '', Validators.required],
+      documents: this.data ? this.fb.array([]) : this.fb.array([this.createDocument()])
+    });
+
+    if (this.data) {
+      this.addDocuments(this.data.documents);
+    }
+
+    console.log(this.form.value);
+  }
+
+  createDocument(document?: DocumentsModel): FormGroup {
+    return this.fb.group({
+      number: [document ? document.number : '', Validators.required],
+      category: document ? document.category : '',
+      doc_type: [document ? document.doc_type : '', Validators.required],
+      add_document: false
     });
   }
 
-  createDocument(): FormGroup {
-    return this.fb.group({
-      number: ['', Validators.required],
-      category: '',
-      doc_type: ['', Validators.required],
-      add_document: false
+  addDocuments(documents: DocumentsModel[]) {
+    documents.forEach((item) => {
+      this.documents = this.form.get('documents') as FormArray;
+      this.documents.push(this.createDocument(item));
     });
   }
 
@@ -58,13 +69,9 @@ export class DialogCadastroComponent implements OnInit {
 
     this.documents = this.form.get('documents') as FormArray;
     this.documents.push(this.createDocument());
-
-    console.log(this.documents);
   }
 
   removeDocument(item: FormControl, index: number): void {
-    console.log(item);
-
     this.documents.controls.splice(index, 1);
     this.documents.value.splice(index, 1);
   }
@@ -72,9 +79,18 @@ export class DialogCadastroComponent implements OnInit {
   save() {
     this.isLoading = true;
 
-    console.log(this.form.valid);
-    console.log(this.form.value);
+    this.data ? this.update() : this.insert();
+  }
 
+  update() {
+    this.motoristaController.update(this.form.value)
+    .pipe(finalize(() => {
+      this.isLoading = false;
+    }))
+    .subscribe(res => this.dialogRef.close(res), err => this.notification.open(err));
+  }
+
+  insert() {
     this.motoristaController.insert(this.form.value)
     .pipe(finalize(() => {
       this.isLoading = false;

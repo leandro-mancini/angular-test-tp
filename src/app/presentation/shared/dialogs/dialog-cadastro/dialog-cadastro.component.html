@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Cadastrar Motorista</h1>
+<h1 mat-dialog-title>{{data ? 'Editar Motorista #' + data.id : 'Cadastrar Motorista'}}</h1>
 <div mat-dialog-content>
   <form [formGroup]="form" (ngSubmit)="save()" novalidate>
     <div class="row">
@@ -21,7 +21,7 @@
           t-label="Telefone">
         </app-input>
       </div>
-      <div class="col-12" formArrayName="documents" *ngFor="let item of getControl(form, 'documents'); let i = index;">
+      <div class="col-12" formArrayName="documents" *ngFor="let item of form.controls['documents']['controls']; let i = index;">
         <div class="row" [formGroupName]="i">
           <div class="col-12">
             <label>Tipo de documento:</label>
@@ -30,7 +30,8 @@
               <mat-radio-button class="t-radio-button" value="CNH">CNH</mat-radio-button>
             </mat-radio-group>
           </div>
-          <div class="col-12 row m-0" *ngIf="item.get('doc_type').value != ''">
+
+          <div class="col-12 row m-0" *ngIf="item.get('doc_type').value">
             <div class="pl-0"
               [ngClass]="{ 'col-6' : item.get('doc_type').value == 'CNH', 'col-10' : item.get('doc_type').value == 'CPF' }">
               <app-input class="t-input-number" formControlName="number"
@@ -46,7 +47,7 @@
             </div>
             <div class="col p-0 m-0 row justify-content-center">
               <button mat-fab type="button" class="t-btn-add" color="primary"
-                *ngIf="getControl(form, 'documents').length < 2 && !item.get('add_document').value"
+                *ngIf="form.controls['documents']['controls'].length < 2 && !item.get('add_document').value"
                 [disabled]="item.invalid"
                 (click)="addNewDocument(item)">
                 <mat-icon>add</mat-icon>
