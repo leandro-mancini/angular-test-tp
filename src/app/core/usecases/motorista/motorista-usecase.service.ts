@@ -33,7 +33,13 @@ export class MotoristaUsecaseService implements IMotoristaUsecase {
     }
   }
   update(param: MotoristaModel): Observable<MotoristaModel> {
-    return this.motoristaRepository.update(param);
+    const validator = this.motoristaValidator.validateFields(param);
+
+    if (validator.IsValid) {
+      return this.motoristaRepository.update(param);
+    } else {
+      return throwError(validator.Errors);
+    }
   }
   delete(id: number): Observable<boolean> {
     return this.motoristaRepository.delete(id);

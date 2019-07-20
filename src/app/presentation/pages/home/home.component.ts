@@ -71,6 +71,8 @@ export class HomeComponent implements OnInit {
       this.isLoading = false;
     }))
     .subscribe((driver: MotoristaModel) => {
+      console.log(driver);
+
       this.drivers.push(driver);
       this.dataSource = new MatTableDataSource(this.drivers);
     });

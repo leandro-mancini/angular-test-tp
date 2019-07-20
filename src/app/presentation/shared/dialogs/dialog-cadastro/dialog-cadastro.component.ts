@@ -44,8 +44,6 @@ export class DialogCadastroComponent implements OnInit {
     if (this.data) {
       this.addDocuments(this.data.documents);
     }
-
-    console.log(this.form.value);
   }
 
   createDocument(document?: DocumentsModel): FormGroup {
@@ -53,7 +51,7 @@ export class DialogCadastroComponent implements OnInit {
       number: [document ? document.number : '', Validators.required],
       category: document ? document.category : '',
       doc_type: [document ? document.doc_type : '', Validators.required],
-      add_document: false
+      add_document: document ? true : false
     });
   }
 
