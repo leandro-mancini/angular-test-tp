@@ -72,6 +72,11 @@ export class DialogCadastroComponent implements OnInit {
   removeDocument(item: FormControl, index: number): void {
     this.documents.controls.splice(index, 1);
     this.documents.value.splice(index, 1);
+
+    if (this.documents.value.length === 0) {
+      this.documents = this.form.get('documents') as FormArray;
+      this.documents.push(this.createDocument());
+    }
   }
 
   save() {
