@@ -60,7 +60,7 @@ Os arquivos de tradução usam o formato [JSON](http://www.json.org) comum .
 
 #### Ferramentas
 
-Os processos de desenvolvimento, construção e qualidade são baseados em scripts angular-cli](https://github.com/angular/angular-cli) e [NPM scripts](https://docs.npmjs.com/misc/scripts), que incluem:
+Os processos de desenvolvimento, construção e qualidade são baseados em scripts [angular-cli](https://github.com/angular/angular-cli) e [NPM scripts](https://docs.npmjs.com/misc/scripts), que incluem:
 
 - Processo otimizado de compilação e empacotamento com o [Webpack](https://webpack.github.io)
 - CSS entre navegadores com [autoprefixer](https://github.com/postcss/autoprefixer) e [browserslist](https://github.com/ai/browserslist)
