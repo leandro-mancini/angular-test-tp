@@ -2,7 +2,7 @@
 
 ## Começando
 
-1. Vá para a pasta do projeto e instale as dependências:
+1. Vá para a pasta do projeto `./web` e instale as dependências:
 
 ```bash
 npm install
@@ -76,3 +76,8 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [RxJS](http://reactivex.io/rxjs)
 - [ngx-translate](https://github.com/ngx-translate/core)
 - [Lodash](https://lodash.com)
+
+
+# Flutter aplicativo mobile
+
+## Começando
