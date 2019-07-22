@@ -14,7 +14,13 @@ npm install
 npm start
 ```
 
-3. Inicie o servidor de APIs:
+3. Instalar o JSON Server:
+
+```bash
+npm install -g json-server
+```
+
+4. Inicie o servidor JSON:
 
 ```bash
 npm run server
@@ -76,6 +82,9 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [RxJS](http://reactivex.io/rxjs)
 - [ngx-translate](https://github.com/ngx-translate/core)
 - [Lodash](https://lodash.com)
+- [Moment](https://momentjs.com)
+- [AutoMapper](https://github.com/loedeman/AutoMapper)
+- [Fluent validator](https://github.com/markusbohl/fluent-ts-validator)
 
 
 # Flutter aplicativo mobile
