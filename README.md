@@ -59,6 +59,18 @@ npm run server
     | - presentation.module.ts
 ````
 
+# Principais tarefas
+
+A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npmjs.com/misc/scripts).
+
+Tarefas                       | Descrição
+------------------------------|---------------------------------------------------------------------------------------
+npm start                     | Execute o servidor de desenvolvimento em `http://localhost:4200/`
+npm test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
+npm run e2e                   | Executar testes e2e usando [Protractor](http://www.protractortest.org)
+npm run lint                  | Código Lint
+npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
+
 # O que esta no pacote
 
 O modelo do aplicativo é baseado em [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) e [Sass](http://sass-lang.com). 
