@@ -85,6 +85,7 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [Moment](https://momentjs.com)
 - [AutoMapper](https://github.com/loedeman/AutoMapper)
 - [Fluent validator](https://github.com/markusbohl/fluent-ts-validator)
+- [Cucumber](https://cucumber.io)
 
 
 # Flutter aplicativo mobile
