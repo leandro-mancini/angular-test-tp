@@ -1,0 +1,78 @@
+# angular-test-tp
+
+## Começando
+
+1. Vá para a pasta do projeto e instale as dependências:
+
+```bash
+npm install
+```
+
+2. Inicie o servidor de desenvolvimento e abra localhost:4200 em seu navegador:
+
+```bash
+npm start
+```
+
+3. Inicie o servidor de APIs:
+
+```bash
+npm run server
+```
+
+# Estrutura do projeto
+
+````
+| - app
+  | - core
+    | - domain
+      | - [+] entity
+    | - interfaces
+      | - [+] controllers
+      | - [+] entity
+      | - [+] message
+      | - [+] repository
+      | - [+] usecases
+      | - [+] validations
+    | - [+] message
+    | - [+] usecases
+    | - core.module.ts
+  | - data
+    | - [+] repository
+    | - data.module.ts
+  | - infra
+    | - [+] auth
+    | - [+] http
+    | - [+] translations
+    | - infra.module.ts
+  | - presentation
+    | - [+] base
+    | - [+] controllers
+    | - [+] pages
+    | - [+] shared
+    | - presentation.module.ts
+````
+
+# O que esta no pacote
+
+O modelo do aplicativo é baseado em [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) e [Sass](http://sass-lang.com). 
+Os arquivos de tradução usam o formato [JSON](http://www.json.org) comum .
+
+#### Ferramentas
+
+Os processos de desenvolvimento, construção e qualidade são baseados em scripts angular-cli](https://github.com/angular/angular-cli) e [NPM scripts](https://docs.npmjs.com/misc/scripts), que incluem:
+
+- Processo otimizado de compilação e empacotamento com o [Webpack](https://webpack.github.io)
+- CSS entre navegadores com [autoprefixer](https://github.com/postcss/autoprefixer) e [browserslist](https://github.com/ai/browserslist)
+- Testes de unidade usando [Jasmine](http://jasmine.github.io) e [Karma](https://karma-runner.github.io)
+- Testes de ponta a ponta usando [Protractor](https://github.com/angular/protractor)
+- Análise de código estático: [TSLint](https://github.com/palantir/tslint), [Codelyzer](https://github.com/mgechev/codelyzer), [Stylelint](http://stylelint.io) e [HTMLHint](http://htmlhint.com/)
+
+#### Bibliotecas
+
+- [Angular](https://angular.io)
+- [Material Angular](https://material.angular.io)
+- [Bootstrap 4](https://getbootstrap.com)
+- [RxJS](http://reactivex.io/rxjs)
+- [ngx-translate](https://github.com/ngx-translate/core)
+- [Lodash](https://lodash.com)
