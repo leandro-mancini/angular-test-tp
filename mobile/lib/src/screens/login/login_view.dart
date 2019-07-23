@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:toast/toast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:truckpad/src/app/domain/entity/usuario_entity.dart';
+import 'package:truckpad/src/app/domain/request/usuario_request.dart';
+import 'package:truckpad/src/app/usecases/usuario_usecase.dart';
+import 'package:truckpad/src/app/validations/usuario_validation.dart';
 import 'package:truckpad/src/screens/home/home_view.dart';
 
 class LoginPage extends StatefulWidget {
@@ -12,6 +18,12 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _isLoading = false;
   bool _passwordVisible = true;
+
+  UsuarioUseCase usuarioUseCase = new UsuarioUseCase();
+  UsuarioValidation usuarioValidation = new UsuarioValidation();
+
+  String username = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -100,10 +112,10 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(
           fontSize: 20,
         ),
-        // validator: validation.validateField,
-        // onSaved: (String value) {
-        //   username = value;
-        // }
+        validator: usuarioValidation.validateField,
+        onSaved: (String value) {
+          username = value;
+        }
       ),
     );
   }
@@ -149,10 +161,10 @@ class _LoginPageState extends State<LoginPage> {
         style: TextStyle(
           fontSize: 20,
         ),
-        // validator: validation.validateField,
-        // onSaved: (String value) {
-        //   password = value;
-        // }
+        validator: usuarioValidation.validateField,
+        onSaved: (String value) {
+          password = value;
+        }
       ),
     );
   }
@@ -195,16 +207,35 @@ class _LoginPageState extends State<LoginPage> {
     if (_formKey.currentState.validate()) {
       _formKey.currentState.save();
 
-      // setState(() {
-      //   this._isLoading = true;
-      // });
+      setState(() {
+        this._isLoading = true;
+      });
 
-      Navigator.push(
-        context, 
-        MaterialPageRoute(
-          builder: (context) => HomePage(),
-        )
-      );
+      UsuarioRequest usuarioRequest = new UsuarioRequest();
+
+      usuarioRequest.username = username;
+      usuarioRequest.password = password;
+
+      UsuarioEntity usuarioEntity = await usuarioUseCase.login(usuarioRequest);
+
+      if (usuarioEntity != null) {
+        final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+        prefs.setString('credentials', usuarioRequest.toString());
+
+        Navigator.push(
+          context, 
+          MaterialPageRoute(
+            builder: (context) => HomePage(),
+          )
+        );
+      } else {
+        Toast.show('Usuario ou senha incorreto', context, duration: Toast.LENGTH_LONG);
+      }
+
+      setState(() {
+        this._isLoading = false;
+      });
     }
   }
 }

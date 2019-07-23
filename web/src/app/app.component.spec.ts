@@ -1,35 +1,47 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { I18nService } from './infra/translations/i18n.service';
+import { TranslateModule } from '@ngx-translate/core';
 
-describe('AppComponent', () => {
+describe('AppComponent:', () => {
+  let i18nService: I18nService;
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        TranslateModule.forRoot()
       ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        I18nService
+      ]
     }).compileComponents();
+
+    i18nService = TestBed.get(I18nService);
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'angular-test-unit'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-test-unit');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-test-unit!');
+  });
+
+  it('deve criar o aplicativo', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('deve iniciar o setup translations', () => {
+    component.ngOnInit();
+
+    const defaultLanguage = 'pt_BR';
+    const supportedLanguages = ['pt_BR'];
+
+    i18nService.init(defaultLanguage, supportedLanguages);
   });
 });

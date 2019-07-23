@@ -1,7 +1,7 @@
 import { DocumentsModel } from './documents-model';
 
-describe('DocumentsModel', () => {
-  it('should create an instance', () => {
+describe('DocumentsModel:', () => {
+  it('deve ser criado uma instancia', () => {
     expect(new DocumentsModel()).toBeTruthy();
   });
 });

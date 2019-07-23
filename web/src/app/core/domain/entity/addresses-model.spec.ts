@@ -1,7 +1,7 @@
 import { AddressesModel } from './addresses-model';
 
-describe('AddressesModel', () => {
-  it('should create an instance', () => {
+describe('AddressesModel:', () => {
+  it('deve ser criado uma instancia', () => {
     expect(new AddressesModel()).toBeTruthy();
   });
 });

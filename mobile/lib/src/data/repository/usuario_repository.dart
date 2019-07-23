@@ -1,12 +1,13 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:truckpad/src/app/domain/entity/usuario_entity.dart';
 
 import 'package:truckpad/src/app/domain/request/usuario_request.dart';
 import 'package:truckpad/src/app/interfaces/repository/iusuario_repository.dart';
 
 class UsuarioRepository implements IUsuarioRepository {
 
-  final String baseUrl = 'http://localhost:3000';
+  final String baseUrl = 'https://my-json-server.typicode.com/leandro-mancini/angular-test-tp/';
 
   @override
   Future login(UsuarioRequest param) async {
@@ -21,9 +22,11 @@ class UsuarioRepository implements IUsuarioRepository {
       throw new Exception('Erro ao buscar dados');
     } else {
       if (statusCode == 200) {
-        var res = json.decode(uriResponse.body);
+        List<dynamic> res = json.decode(uriResponse.body);
 
-        print(uriResponse.body);
+        if (res.length > 0) {
+          return new UsuarioEntity.fromJson(res[0]);
+        }
       }
     }
 

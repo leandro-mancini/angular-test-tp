@@ -17,7 +17,7 @@ export class NotificationService {
     private snackBar: MatSnackBar
   ) { }
 
-  open(err: ValidationResult): Observable<any> {
+  open(err: any): Observable<any> {
     const errs: string[] = [];
 
     _.forEach(err, (x: ValidationError) => {
