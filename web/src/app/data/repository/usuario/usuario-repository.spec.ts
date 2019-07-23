@@ -2,12 +2,11 @@ import { UsuarioRepository } from './usuario-repository';
 import { TestBed, async } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { environment } from '../../../../environments/environment';
-import { UsuarioModel } from '../../../core/domain/entity/usuario-model';
+import { UsuarioRequest } from '../../request/usuario-request';
 
 describe('data: UsuarioRepository', () => {
-  let usuarioRepository: UsuarioRepository;
-  let httpMock: HttpTestingController;
-  let spy: any;
+  let service: UsuarioRepository;
+  let backend: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -17,93 +16,63 @@ describe('data: UsuarioRepository', () => {
       providers: [UsuarioRepository]
     }).compileComponents();
 
-    usuarioRepository = TestBed.get(UsuarioRepository);
-    httpMock = TestBed.get(HttpTestingController);
-  });
-
-  afterEach(() => {
-    httpMock.verify();
+    service = TestBed.get(UsuarioRepository);
+    backend = TestBed.get(HttpTestingController);
   });
 
   it('deve criar uma instancia', () => {
-    expect(usuarioRepository).toBeTruthy();
-  });
-
-  it('deve executar o metodo login', () => {
-    const mock = { username: 'usuario1', password: '123' };
-
-    expect(usuarioRepository.login(mock)).toBeTruthy();
-  });
-
-  it('should not immediately connect to the server', () => {
-    httpMock.expectNone({});
+    expect(service).toBeTruthy();
   });
 
   describe('quando fizer o login', () => {
-    xit('deve fazer uma solicitação GET', async(() => {
-      const param = { username: 'truckpad', password: '123' };
+    it('deve fazer uma solicitação GET', async(() => {
+      const user = { username: 'truckpad', password: '123' };
 
-      usuarioRepository.login(param);
+      service.login(user).subscribe(() => {});
 
-      let req = httpMock.expectOne(environment.serverUrl + '/usuarios?username=truckpad&senha=123');
+      const req = backend.expectOne(environment.serverUrl + '/usuarios?username=' + user.username + '&password=' + user.password + '');
+      expect(req.request.method).toBe('GET');
 
-      expect(req.request.method).toEqual('GET');
-
-      req.flush([]);
+      backend.verify();
     }));
-  });
 
-  it('deve retornar Observable<UsuarioModel>', () => {
-    // const mockResponse = [{
-    //   id: 1,
-    //   nome: 'truckpad'
-    // }];
+    it('deve retornar um usuario', () => {
+      const user = { username: 'truckpad', password: '123' };
 
-    // const param = {
-    //   username: 'truckpad',
-    //   password: '123'
-    // };
+      service.login(user).subscribe((item) => {
+        if (item) {
+          expect(item).toBeTruthy();
+        }
+      });
 
-    // usuarioRepository.login(param).subscribe((res: UsuarioModel) => {
-    //   if (res) {
-    //     expect(res).toBeTruthy();
-    //     expect(res.id).toEqual(1);
-    //   }
-    // });
+      const req = backend.expectOne(environment.serverUrl + '/usuarios?username=' + user.username + '&password=' + user.password + '');
 
-    // httpMock.verify();
+      req.flush([{
+        id: 1
+      }]);
 
-    // const req = httpMock.expectOne(
-    //   environment.serverUrl + '/usuarios?username=truckpad&senha=123'
-    // );
-
-    // expect(req.request.method).toEqual('GET');
-
-    // req.flush(mockResponse);
-
-    // httpMock.verify();
-  });
-
-  xit('deve retornar null ao executar o metodo login', () => {
-    const mockResponse = [null];
-
-    const param = {
-      username: 'usuario1',
-      password: '123'
-    };
-
-    usuarioRepository.login(param).subscribe(res => {
-      expect(res).toEqual(null);
+      backend.verify();
     });
 
-    // const req = httpTestingController.expectOne(
-    //   environment.serverUrl + '/usuarios?username=' + param.username + '&senha=' + param.password + ''
-    // );
+    it('deve retornar null ao executar o metodo login', () => {
+      const param = {
+        username: 'usuario1',
+        password: '123'
+      };
 
-    // req.flush(mockResponse);
+      service.login(param).subscribe(res => {
+        expect(res).toEqual(null);
+      });
+
+      const req = backend.expectOne(environment.serverUrl + '/usuarios?username=' + param.username + '&password=' + param.password + '');
+
+      req.flush([null]);
+    });
   });
 
-  it('deve executar o metodo logout', () => {
-    expect(usuarioRepository.logout()).toBeTruthy();
+  describe('quando fizer o logout', () => {
+    it('deve deslogar o usuario', () => {
+      expect(service.logout()).toBeTruthy();
+    });
   });
 });
