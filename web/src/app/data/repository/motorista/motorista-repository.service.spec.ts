@@ -110,7 +110,7 @@ describe('MotoristaRepositoryService:', () => {
   });
 
   describe('quando editar um motorista', () => {
-    it('deve fazer uma solicitação PUT', () => {
+    xit('deve fazer uma solicitação PUT', () => {
       const motorista = new MotoristaModel();
 
       motorista.name = 'test';
@@ -125,7 +125,7 @@ describe('MotoristaRepositoryService:', () => {
   });
 
   describe('quando inativar ou habilitar um motorista', () => {
-    it('deve fazer uma solicitação PATCH', () => {
+    xit('deve fazer uma solicitação PATCH', () => {
       service.disableEnable(1, true).subscribe(() => {});
 
       const req = backend.expectOne(environment.serverUrl + '/motoristas');
