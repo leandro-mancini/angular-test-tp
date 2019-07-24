@@ -6,7 +6,7 @@ import { IUsuarioUseCase } from 'src/app/core/interfaces/usecases/iusuario-use-c
 
 describe('UsuarioControllerService', () => {
   let usuarioController: UsuarioControllerService;
-  let valueServiceSpy: jasmine.SpyObj<IUsuarioUseCase>;
+  let usuarioUseCase: jasmine.SpyObj<IUsuarioUseCase>;
 
   beforeEach(() => {
     const spy = jasmine.createSpyObj('IUsuarioUseCase', ['login', 'logout']);
@@ -17,28 +17,28 @@ describe('UsuarioControllerService', () => {
       ]
     });
 
-    valueServiceSpy = TestBed.get(IUsuarioUseCase);
+    usuarioUseCase = TestBed.get(IUsuarioUseCase);
     usuarioController = TestBed.get(UsuarioControllerService);
   });
 
-  xit('deve ser criado', () => {
+  it('deve ser criado', () => {
     expect(usuarioController).toBeTruthy();
   });
 
-  xit('deve retornar true o metodo login', () => {
-    const usuario = new UsuarioRequest();
+  it('deve chamar o metodo login', () => {
+    const mock = {
+      username: 'truckpad',
+      password: '123'
+    };
 
-    usuario.username = 'test';
-    usuario.password = '123456';
+    usuarioController.login(mock);
 
-    usuarioController.login(usuario);
-
-    expect(valueServiceSpy.login.calls.count()).toBe(1);
+    expect(usuarioUseCase.login.calls.count()).toBe(1);
   });
 
-  xit('deve retornar true o metodo logout', () => {
+  it('deve chamar o metodo logout', () => {
     usuarioController.logout();
 
-    expect(valueServiceSpy.logout.calls.count()).toBe(1);
+    expect(usuarioUseCase.logout.calls.count()).toBe(1);
   });
 });
