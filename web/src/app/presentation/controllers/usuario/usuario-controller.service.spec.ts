@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { UsuarioControllerService } from './usuario-controller.service';
-import { UsuarioRequest } from '../../../data/request/usuario-request';
 import { IUsuarioUseCase } from 'src/app/core/interfaces/usecases/iusuario-use-case';
 
 describe('UsuarioControllerService', () => {
@@ -17,8 +16,8 @@ describe('UsuarioControllerService', () => {
       ]
     });
 
-    usuarioUseCase = TestBed.get(IUsuarioUseCase);
     usuarioController = TestBed.get(UsuarioControllerService);
+    usuarioUseCase = TestBed.get(IUsuarioUseCase);
   });
 
   it('deve ser criado', () => {

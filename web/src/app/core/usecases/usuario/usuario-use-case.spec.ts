@@ -1,53 +1,62 @@
 import { UsuarioUseCase } from './usuario-use-case';
 import { TestBed } from '@angular/core/testing';
-import { UsuarioRequest } from 'src/app/data/request/usuario-request';
-import { UsuarioRepository } from 'src/app/data/repository/usuario/usuario-repository';
-import { UsuarioModel } from '../../domain/entity/usuario-model';
-import { of, Observable } from 'rxjs';
-
-class MockUsuarioRepository {
-  login(param: UsuarioRequest): Observable<UsuarioModel> {
-    return of(new UsuarioModel());
-  }
-
-  logout(): Observable<boolean> {
-    return of(true);
-  }
-}
+import { IUsuarioRepository } from '../../interfaces/repository/iusuario-repository';
+import { IUsuarioValidator } from '../../interfaces/validations/iusuario-validator';
 
 describe('UsuarioUseCase', () => {
   let usuarioUseCase: UsuarioUseCase;
-  let usuarioRepository: MockUsuarioRepository;
+  let usuarioRepository: jasmine.SpyObj<IUsuarioRepository>;
+  let usuarioValidator: jasmine.SpyObj<IUsuarioValidator>;
 
   beforeEach(() => {
+    const repositorySpy = jasmine.createSpyObj('IUsuarioRepository', ['login', 'logout']);
+    const validationSpy = jasmine.createSpyObj('IUsuarioValidator', ['validateFields']);
+
     TestBed.configureTestingModule({
       providers: [
-        { provide: UsuarioRepository, useClass: MockUsuarioRepository }
+        { provide: IUsuarioRepository, useValue: repositorySpy },
+        { provide: IUsuarioValidator, useValue: validationSpy }
       ]
     })
     .compileComponents();
 
     usuarioUseCase = TestBed.get(UsuarioUseCase);
-
-    usuarioRepository = new MockUsuarioRepository();
+    usuarioRepository = TestBed.get(IUsuarioRepository);
+    usuarioValidator = TestBed.get(IUsuarioValidator);
   });
 
-  xit('deve ser criado', () => {
+  it('deve ser criado', () => {
     expect(usuarioUseCase).toBeTruthy();
   });
 
-  xit('deve executar o metodo login', () => {
-    const usuario = new UsuarioRequest();
+  xit('deve executar o metodo login e ser valido', () => {
+    const mock = {
+      username: 'truckpad',
+      password: '123'
+    };
 
-    usuario.username = 'test';
-    usuario.password = '123456';
+    usuarioUseCase.login(mock);
 
-    usuarioUseCase.login(usuario);
-    expect(usuarioUseCase.login(usuario)).toBeTruthy();
+    // expect(validationResult..IsValid).toBeFalsy();
+
+    // spyOn(usuarioValidator, 'validateFields').and.returnValue(true);
+
+    // expect(usuarioValidator.validateFields(mock)).toBeTruthy();
   });
 
-  xit('deve executar o metodo logout', () => {
+  xit('deve executar o metodo login e ser invalido', () => {
+    const mock = {
+      username: '',
+      password: ''
+    };
+
+    usuarioUseCase.login(mock);
+
+    expect(usuarioValidator.validateFields(mock)).toBeFalsy();
+  });
+
+  it('deve executar o metodo logout', () => {
     usuarioUseCase.logout();
-    expect(usuarioUseCase.logout()).toBeTruthy();
+    expect(usuarioRepository.logout.calls.count()).toBe(1);
   });
 });
