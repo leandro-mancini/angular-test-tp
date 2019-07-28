@@ -1,9 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { AuthService } from 'src/app/infra/auth/auth.service';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NotificationService } from '../../shared/notification/notification.service';
 import { SharedModule } from '../../shared/shared.module';
@@ -11,19 +9,11 @@ import { IUsuarioController } from '../../../core/interfaces/controllers/iusuari
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuarioModel } from 'src/app/core/domain/entity/usuario-model';
 import { of, throwError } from 'rxjs';
-
-class MockAuthService extends AuthService {
-  authenticated = false;
-
-  isAuthenticated() {
-    return this.authenticated;
-  }
-}
+import { AppMaterialModule } from 'src/app/app-material.module';
 
 describe('Component: Login', () => {
   let component: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
-  let authService: MockAuthService;
   let usuarioController: jasmine.SpyObj<IUsuarioController>;
 
   beforeEach(async(() => {
@@ -33,14 +23,13 @@ describe('Component: Login', () => {
       declarations: [ LoginComponent ],
       providers: [
         FormBuilder,
-        AuthService,
-        MatSnackBar,
         NotificationService,
         { provide: IUsuarioController, useValue: controllerSpy }
       ],
       imports: [
         RouterTestingModule,
         ReactiveFormsModule,
+        AppMaterialModule,
         BrowserAnimationsModule,
         SharedModule
       ]
@@ -51,21 +40,13 @@ describe('Component: Login', () => {
   }));
 
   beforeEach(() => {
-    authService = new MockAuthService();
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  afterEach(() => {
-    authService = null;
-    component = null;
-  });
-
   it('deve criar', () => {
     expect(component).toBeTruthy();
-
-    component.ngOnInit();
   });
 
   describe('login', () => {

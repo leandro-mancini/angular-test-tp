@@ -41,8 +41,6 @@ export class HomeComponent implements OnInit {
       this.isLoading = false;
     }))
     .subscribe((driver: MotoristaModel) => {
-      console.log(driver);
-
       this.drivers.push(driver);
       this.dataSource = new MatTableDataSource(this.drivers);
     });
@@ -59,10 +57,7 @@ export class HomeComponent implements OnInit {
   disableEnable(param: MotoristaModel) {
     param.enable = !param.enable;
 
-    this.motoristaController.disableEnable(param.id, param.enable)
-    .subscribe(res => {
-      console.log(res);
-    });
+    this.motoristaController.disableEnable(param.id, param.enable);
   }
 
   openDialog(driver?: MotoristaModel) {
