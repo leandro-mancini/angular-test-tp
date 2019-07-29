@@ -38,11 +38,6 @@ module.exports = () => {
           "number": "700441702",
           "doc_type": "CNH",
           "category": "AB"
-        },
-        {
-          "country": "BR",
-          "number": "32132132188",
-          "doc_type": "CPF"
         }
       ]
     },

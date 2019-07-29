@@ -23,7 +23,6 @@ export class MotoristaValidatorService implements IMotoristaValidator {
     return validator
       .NotEmpty(m => m.name, this.validatorMessage.required('Nome').value)
       .NotEmpty(m => m.birth_date.toString(), this.validatorMessage.required('Data de Nascimento').value)
-      .NotEmpty(m => m.phone, this.validatorMessage.required('Telefone').value)
       .If(m => m.documents != null && m.documents.length > 0,
         v => v.ForEach(m => m.documents, this.validateDocumentsRules).ToResult())
       .ToResult();
