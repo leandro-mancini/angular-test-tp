@@ -2,20 +2,20 @@
 <div mat-dialog-content>
   <form [formGroup]="form" (ngSubmit)="save()" novalidate>
     <div class="row">
-      <div class="col-5">
+      <div class="col-12 col-md-5">
         <app-input formControlName="name"
           t-type="text"
           t-label="Nome">
         </app-input>
       </div>
-      <div class="col-4">
+      <div class="col-12 col-md-4">
         <app-input formControlName="birth_date"
           t-type="date"
           t-label="Data de nascimento"
           t-placeholder="">
         </app-input>
       </div>
-      <div class="col-3">
+      <div class="col-12 col-md-3">
         <app-input formControlName="phone"
           t-type="text"
           t-label="Telefone">
@@ -33,30 +33,17 @@
 
           <div class="col-12 row m-0" *ngIf="item.get('doc_type').value">
             <div class="pl-0"
-              [ngClass]="{ 'col-6' : item.get('doc_type').value == 'CNH', 'col-10' : item.get('doc_type').value == 'CPF' }">
+              [ngClass]="{ 'col-8' : item.get('doc_type').value == 'CNH', 'col-12 pr-0' : item.get('doc_type').value == 'CPF' }">
               <app-input class="t-input-number" formControlName="number"
                 t-type="text"
                 t-label="Número">
               </app-input>
             </div>
-            <div class="col-4" *ngIf="item.get('doc_type').value == 'CNH'">
+            <div class="col-4 pr-0" *ngIf="item.get('doc_type').value == 'CNH'">
               <app-input class="t-input-category" formControlName="category"
                 t-type="text"
                 t-label="Categoria">
               </app-input>
-            </div>
-            <div class="col p-0 m-0 row justify-content-center">
-              <button mat-fab type="button" class="t-btn-add" color="primary"
-                *ngIf="form.controls['documents']['controls'].length < 2 && !item.get('add_document').value"
-                [disabled]="item.invalid"
-                (click)="addNewDocument(item)">
-                <mat-icon>add</mat-icon>
-              </button>
-              <button mat-fab type="button" class="t-btn-add" color="warn"
-                *ngIf="item.get('add_document').value"
-                (click)="removeDocument(item, i)">
-                <mat-icon>clear</mat-icon>
-              </button>
             </div>
           </div>
         </div>

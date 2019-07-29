@@ -23,7 +23,7 @@ export class UsuarioValidatorService implements IUsuarioValidator {
       .NotEmpty(m => m.username, this.validatorMessage.required('Usuário').value)
       .Length(m => m.username, 0, 10, this.validatorMessage.maximumSize('Usuário', '10').value)
       .NotEmpty(m => m.password, this.validatorMessage.required('Senha').value)
-      .Length(m => m.username, 0, 10, this.validatorMessage.maximumSize('Senha', '10').value)
+      .Length(m => m.password, 0, 10, this.validatorMessage.maximumSize('Senha', '10').value)
       .ToResult();
   }
 }

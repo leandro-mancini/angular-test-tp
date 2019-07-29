@@ -6,4 +6,13 @@ table {
   .mat-column-action {
     width: 120px;
   }
+
+  .card-list {
+    margin-bottom: 16px;
+
+    .mat-card-header-text {
+      margin: 0;
+    }
+  }
 }
+
