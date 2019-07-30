@@ -138,14 +138,22 @@ npm run e2e
 
 ## Flutter aplicativo mobile
 
-Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile aqui(http://www.google.com)
+Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile [aqui](app-truckpad.apk)
 
-## Começando
+## Execute o aplicativo
 
 1. Vá para a pasta do projeto mobile `./mobile`.
 
-2. Inicie o servidor de desenvolvimento:
+2. Verifique se um dispositivo Android está sendo executado. Se nenhum for exibido, siga as instruções específicas do dispositivo na página de [instalação](https://flutter.dev/docs/get-started/install) do seu sistema operacional.
+
+```bash
+flutter devices
+```
+
+3. Execute o aplicativo com o seguinte comando:
 
 ```bash
 flutter run
 ```
+
+Depois que a construção do aplicativo for concluída, você verá o aplicativo inicial no seu dispositivo.
