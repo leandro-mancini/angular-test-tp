@@ -28,7 +28,7 @@ npm start
 npm install -g json-server
 ```
 
-4. Inicie o servidor JSON:
+4. Abra um novo terminal e inicie o servidor JSON:
 
 ```bash
 npm run server
@@ -107,6 +107,19 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [Jasmine](https://jasmine.github.io)
 - [chai](https://www.chaijs.com)
 - [Cucumber](https://cucumber.io)
+
+## Executando teste de unidade
+
+1. Inicie o servidor de test:
+
+```bash
+npm run test
+```
+
+2. Vá para a pasta do projeto `./web/coverage` e instale as dependências.
+
+3. Execute o arquivo `index.html` para poder visualizar o codecovarage:
+[![N|Solid](print-test.png)]
 
 
 ## Flutter aplicativo mobile
