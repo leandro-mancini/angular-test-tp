@@ -8,6 +8,9 @@ Baixe o repositório:
 git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
+***Usuário***: truckpad
+***Password*** 123
+
 ### Angular aplicativo web
 
 1. Vá para a pasta do projeto `./web` e instale as dependências:
