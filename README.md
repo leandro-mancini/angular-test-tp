@@ -1,38 +1,40 @@
-# Angular aplicativo web
+# Truckpad
 
 ## Começando
 
-1. Baixe o repositório:
+Baixe o repositório:
 
 ```bash
 git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
-2. Vá para a pasta do projeto `./web` e instale as dependências:
+### Angular aplicativo web
+
+1. Vá para a pasta do projeto `./web` e instale as dependências:
 
 ```bash
 npm install
 ```
 
-3. Inicie o servidor de desenvolvimento e abra localhost:4200 em seu navegador:
+2. Inicie o servidor de desenvolvimento e abra localhost:4200 em seu navegador:
 
 ```bash
 npm start
 ```
 
-4. Instalar o JSON Server:
+3. Instalar o JSON Server:
 
 ```bash
 npm install -g json-server
 ```
 
-5. Inicie o servidor JSON:
+4. Abra um novo terminal e inicie o servidor JSON:
 
 ```bash
 npm run server
 ```
 
-# Estrutura do projeto
+### Estrutura do projeto
 
 ````
 | - app
@@ -65,7 +67,7 @@ npm run server
     | - presentation.module.ts
 ````
 
-# Principais tarefas
+### Principais tarefas
 
 A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npmjs.com/misc/scripts).
 
@@ -74,15 +76,14 @@ Tarefas                       | Descrição
 npm start                     | Execute o servidor de desenvolvimento em `http://localhost:4200/`
 npm test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
 npm run e2e                   | Executar testes e2e usando [Protractor](http://www.protractortest.org)
-npm run lint                  | Código Lint
 npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
 
-# O que esta no pacote
+### O que esta no pacote
 
 O modelo do aplicativo é baseado em [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) e [Sass](http://sass-lang.com). 
 Os arquivos de tradução usam o formato [JSON](http://www.json.org) comum .
 
-#### Ferramentas
+### Ferramentas
 
 Os processos de desenvolvimento, construção e qualidade são baseados em scripts [angular-cli](https://github.com/angular/angular-cli) e [NPM scripts](https://docs.npmjs.com/misc/scripts), que incluem:
 
@@ -92,7 +93,7 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - Testes de ponta a ponta usando [Protractor](https://github.com/angular/protractor)
 - Análise de código estático: [TSLint](https://github.com/palantir/tslint), [Codelyzer](https://github.com/mgechev/codelyzer), [Stylelint](http://stylelint.io) e [HTMLHint](http://htmlhint.com/)
 
-#### Bibliotecas
+### Bibliotecas
 
 - [Angular](https://angular.io)
 - [Material Angular](https://material.angular.io)
@@ -103,9 +104,48 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [Moment](https://momentjs.com)
 - [AutoMapper](https://github.com/loedeman/AutoMapper)
 - [Fluent validator](https://github.com/markusbohl/fluent-ts-validator)
+- [Jasmine](https://jasmine.github.io)
+- [chai](https://www.chaijs.com)
 - [Cucumber](https://cucumber.io)
 
+## Executando teste de unidade
 
-# Flutter aplicativo mobile
+1. Inicie o servidor de test:
+
+```bash
+npm run test
+```
+
+2. Vá para a pasta do projeto web `./web/coverage`.
+
+3. Execute o arquivo `index.html` para poder visualizar o codecovarage:
+
+<br>
+
+![N|Solid](print-test.png)
+
+## Executando teste end-to-end
+
+1. Inicie o servidor de test:
+
+```bash
+npm run e2e
+```
+
+2. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
+
+3. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
+
+## Flutter aplicativo mobile
+
+Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile aqui(http://www.google.com)
 
 ## Começando
+
+1. Vá para a pasta do projeto mobile `./mobile`.
+
+2. Inicie o servidor de desenvolvimento:
+
+```bash
+flutter run
+```
