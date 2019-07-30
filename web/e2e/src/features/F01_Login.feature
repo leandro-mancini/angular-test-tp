@@ -4,10 +4,8 @@ Funcionalidade: Autenticar usuario
 
     Cenário: Login
         Dado que estou na página inicial 'Login'
-        Quando devo preencher o usuario 'usuario1'
+        Quando devo preencher o usuario 'truckpad'
         Quando devo preencher a senha '123'
-        E devo clicar no botão 'Entrar'
-        Então devo visualizar a mensagem de 'seja bem-vindo'
         E devo clicar no botão 'Entrar'
         Então sou redirecionado para a página 'Home'
 

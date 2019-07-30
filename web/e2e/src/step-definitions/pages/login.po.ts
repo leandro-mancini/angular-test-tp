@@ -10,9 +10,8 @@ export class LoginPage {
 
     constructor() {
         this.username = $('[formcontrolname="username"] input');
-        this.senha = $('[formcontrolname="senha"] input');
-        this.buttonEnter = $('.action px-button');
-        this.bemVindo = $('.login h6');
+        this.senha = $('[formcontrolname="password"] input');
+        this.buttonEnter = $('button.mat-primary');
         this.buttonUser = $('.px-button-user');
         this.buttonLogout = $('app-nav-current-user .mat-menu-item');
     }

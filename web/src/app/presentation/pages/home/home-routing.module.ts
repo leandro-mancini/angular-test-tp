@@ -7,7 +7,13 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   RouteService.withShell([
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent }
+    {
+      path: 'home',
+      component: HomeComponent,
+      data: {
+        title: 'Home'
+      }
+    }
   ])
 ];
 
