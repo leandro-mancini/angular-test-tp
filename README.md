@@ -9,6 +9,7 @@ git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
 ***Usuário***: truckpad
+<br>
 ***Password*** 123
 
 ### Angular aplicativo web
