@@ -67,7 +67,7 @@ npm run server
     | - presentation.module.ts
 ````
 
-#### Principais tarefas
+### Principais tarefas
 
 A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npmjs.com/misc/scripts).
 
@@ -76,15 +76,14 @@ Tarefas                       | Descrição
 npm start                     | Execute o servidor de desenvolvimento em `http://localhost:4200/`
 npm test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
 npm run e2e                   | Executar testes e2e usando [Protractor](http://www.protractortest.org)
-npm run lint                  | Código Lint
 npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
 
-#### O que esta no pacote
+### O que esta no pacote
 
 O modelo do aplicativo é baseado em [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) e [Sass](http://sass-lang.com). 
 Os arquivos de tradução usam o formato [JSON](http://www.json.org) comum .
 
-#### Ferramentas
+### Ferramentas
 
 Os processos de desenvolvimento, construção e qualidade são baseados em scripts [angular-cli](https://github.com/angular/angular-cli) e [NPM scripts](https://docs.npmjs.com/misc/scripts), que incluem:
 
@@ -94,7 +93,7 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - Testes de ponta a ponta usando [Protractor](https://github.com/angular/protractor)
 - Análise de código estático: [TSLint](https://github.com/palantir/tslint), [Codelyzer](https://github.com/mgechev/codelyzer), [Stylelint](http://stylelint.io) e [HTMLHint](http://htmlhint.com/)
 
-#### Bibliotecas
+### Bibliotecas
 
 - [Angular](https://angular.io)
 - [Material Angular](https://material.angular.io)
