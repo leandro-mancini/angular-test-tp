@@ -1,3 +1,5 @@
+# Truckpad
+
 ## Começando
 
 Baixe o repositório:
@@ -6,7 +8,7 @@ Baixe o repositório:
 git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
-# Angular aplicativo web
+### Angular aplicativo web
 
 1. Vá para a pasta do projeto `./web` e instale as dependências:
 
@@ -32,7 +34,7 @@ npm install -g json-server
 npm run server
 ```
 
-# Estrutura do projeto
+### Estrutura do projeto
 
 ````
 | - app
@@ -65,7 +67,7 @@ npm run server
     | - presentation.module.ts
 ````
 
-# Principais tarefas
+#### Principais tarefas
 
 A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npmjs.com/misc/scripts).
 
@@ -77,7 +79,7 @@ npm run e2e                   | Executar testes e2e usando [Protractor](http://w
 npm run lint                  | Código Lint
 npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
 
-# O que esta no pacote
+#### O que esta no pacote
 
 O modelo do aplicativo é baseado em [HTML5](http://whatwg.org/html), [TypeScript](http://www.typescriptlang.org) e [Sass](http://sass-lang.com). 
 Os arquivos de tradução usam o formato [JSON](http://www.json.org) comum .
@@ -106,6 +108,6 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 - [Cucumber](https://cucumber.io)
 
 
-# Flutter aplicativo mobile
+## Flutter aplicativo mobile
 
 ## Começando
