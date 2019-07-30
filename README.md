@@ -138,4 +138,14 @@ npm run e2e
 
 ## Flutter aplicativo mobile
 
+Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile aqui(http://www.google.com)
+
 ## Começando
+
+1. Vá para a pasta do projeto mobile `./mobile`.
+
+2. Inicie o servidor de desenvolvimento:
+
+```bash
+flutter run
+```
