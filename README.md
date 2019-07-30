@@ -2,25 +2,31 @@
 
 ## Começando
 
-1. Vá para a pasta do projeto `./web` e instale as dependências:
+1. Baixe o repositório:
+
+```bash
+git clone https://github.com/leandro-mancini/angular-test-tp.git
+```
+
+2. Vá para a pasta do projeto `./web` e instale as dependências:
 
 ```bash
 npm install
 ```
 
-2. Inicie o servidor de desenvolvimento e abra localhost:4200 em seu navegador:
+3. Inicie o servidor de desenvolvimento e abra localhost:4200 em seu navegador:
 
 ```bash
 npm start
 ```
 
-3. Instalar o JSON Server:
+4. Instalar o JSON Server:
 
 ```bash
 npm install -g json-server
 ```
 
-4. Inicie o servidor JSON:
+5. Inicie o servidor JSON:
 
 ```bash
 npm run server

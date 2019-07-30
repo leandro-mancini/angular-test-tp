@@ -8,7 +8,7 @@
 </mat-toolbar>
 
 <mat-menu #menu="matMenu" class="menu-user">
-  <mat-card class="menu-card">
+  <mat-card class="menu-card" *ngIf="usuario">
     <mat-card-header>
       <div mat-card-avatar class="menu-card-header-image"></div>
       <mat-card-title>Olá, {{usuario.username}}</mat-card-title>
