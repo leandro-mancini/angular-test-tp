@@ -80,9 +80,8 @@ A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npm
 Tarefas                       | Descrição
 ------------------------------|---------------------------------------------------------------------------------------
 npm start                     | Execute o servidor de desenvolvimento em `http://localhost:4200/`
-npm test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
+npm run test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
 npm run e2e                   | Executar testes e2e usando [Protractor](http://www.protractortest.org)
-npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
 
 ### O que esta no pacote
 
@@ -163,3 +162,12 @@ flutter run
 ```
 
 Depois que a construção do aplicativo for concluída, você verá o aplicativo inicial no seu dispositivo.
+
+### Principais tarefas
+
+A automação de tarefas é baseada em scripts do [YAML scripts](https://dart.dev/guides/packages).
+
+Tarefas                       | Descrição
+------------------------------|---------------------------------------------------------------------------------------
+flutter run                   | Execute o aplicativo em desenvolvimento
+flutter pub get               | Execute para instalar pacotes a partir da linha de comando
