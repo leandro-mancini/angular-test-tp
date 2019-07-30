@@ -8,6 +8,8 @@ Baixe o repositório:
 git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
+Dados de autenticação do usuário `web` e `mobile`:
+
 ***Usuário***: truckpad
 <br>
 ***Password*** 123
