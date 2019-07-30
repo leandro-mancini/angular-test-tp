@@ -116,11 +116,25 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 npm run test
 ```
 
-2. Vá para a pasta do projeto `./web/coverage` e instale as dependências.
+2. Vá para a pasta do projeto web `./web/coverage`.
 
 3. Execute o arquivo `index.html` para poder visualizar o codecovarage:
-[![N|Solid](print-test.png)]
 
+<br>
+
+![N|Solid](print-test.png)
+
+## Executando teste end-to-end
+
+1. Inicie o servidor de test:
+
+```bash
+npm run e2e
+```
+
+2. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
+
+3. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
 
 ## Flutter aplicativo mobile
 
