@@ -123,7 +123,7 @@ npm run test
 
 2. Vá para a pasta do projeto web `./web/coverage`.
 
-3. Execute o arquivo `index.html` para poder visualizar o codecovarage:
+3. Execute o arquivo `index.html` para poder visualizar o code covarage:
 
 <br>
 
@@ -140,6 +140,8 @@ npm run e2e
 2. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
 
 3. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
+
+![N|Solid](print-test-end-to-end.png)
 
 ## Flutter aplicativo mobile
 
