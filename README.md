@@ -8,6 +8,12 @@ Baixe o repositório:
 git clone https://github.com/leandro-mancini/angular-test-tp.git
 ```
 
+Dados de autenticação do usuário `web` e `mobile`:
+
+***Usuário***: truckpad
+<br>
+***Password*** 123
+
 ### Angular aplicativo web
 
 1. Vá para a pasta do projeto `./web` e instale as dependências:
@@ -74,9 +80,8 @@ A automação de tarefas é baseada em scripts do [NPM scripts](https://docs.npm
 Tarefas                       | Descrição
 ------------------------------|---------------------------------------------------------------------------------------
 npm start                     | Execute o servidor de desenvolvimento em `http://localhost:4200/`
-npm test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
+npm run test                      | Execute testes unitários via [Karma](https://karma-runner.github.io) no modo de observação
 npm run e2e                   | Executar testes e2e usando [Protractor](http://www.protractortest.org)
-npm run translations:extract  | Extrair strings do código e modelos para `src/app/translations/template.json`
 
 ### O que esta no pacote
 
@@ -110,15 +115,21 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 
 ## Executando teste de unidade
 
-1. Inicie o servidor de test:
+1. Abra um novo terminal e inicie o servidor JSON:
+
+```bash
+npm run server
+```
+
+2. Inicie o servidor de test:
 
 ```bash
 npm run test
 ```
 
-2. Vá para a pasta do projeto web `./web/coverage`.
+3. Vá para a pasta do projeto web `./web/coverage`.
 
-3. Execute o arquivo `index.html` para poder visualizar o codecovarage:
+4. Execute o arquivo `index.html` para poder visualizar o code covarage:
 
 <br>
 
@@ -126,26 +137,51 @@ npm run test
 
 ## Executando teste end-to-end
 
-1. Inicie o servidor de test:
+1. Abra um novo terminal e inicie o servidor JSON:
+
+```bash
+npm run server
+```
+
+2. Inicie o servidor de test:
 
 ```bash
 npm run e2e
 ```
 
-2. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
+3. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
 
-3. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
+4. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
+
+![N|Solid](print-test-end-to-end.png)
 
 ## Flutter aplicativo mobile
 
-Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile aqui(http://www.google.com)
+Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile [aqui](app-truckpad.apk)
 
-## Começando
+## Execute o aplicativo
 
 1. Vá para a pasta do projeto mobile `./mobile`.
 
-2. Inicie o servidor de desenvolvimento:
+2. Verifique se um dispositivo Android está sendo executado. Se nenhum for exibido, siga as instruções específicas do dispositivo na página de [instalação](https://flutter.dev/docs/get-started/install) do seu sistema operacional.
+
+```bash
+flutter devices
+```
+
+3. Execute o aplicativo com o seguinte comando:
 
 ```bash
 flutter run
 ```
+
+Depois que a construção do aplicativo for concluída, você verá o aplicativo inicial no seu dispositivo.
+
+### Principais tarefas
+
+A automação de tarefas é baseada em scripts do [YAML scripts](https://dart.dev/guides/packages).
+
+Tarefas                       | Descrição
+------------------------------|---------------------------------------------------------------------------------------
+flutter run                   | Execute o aplicativo em desenvolvimento
+flutter pub get               | Execute para instalar pacotes a partir da linha de comando
