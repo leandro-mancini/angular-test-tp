@@ -12,8 +12,8 @@ export class LoginPage {
         this.username = $('[formcontrolname="username"] input');
         this.senha = $('[formcontrolname="password"] input');
         this.buttonEnter = $('button.mat-primary');
-        this.buttonUser = $('.px-button-user');
-        this.buttonLogout = $('app-nav-current-user .mat-menu-item');
+        this.buttonUser = $('.mat-toolbar .mat-icon-button');
+        this.buttonLogout = $('.menu-card .mat-button');
     }
 
     navigateTo() {

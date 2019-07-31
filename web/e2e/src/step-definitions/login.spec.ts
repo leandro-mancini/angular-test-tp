@@ -50,14 +50,10 @@ Then('sou redirecionado para a página {string}', { timeout: browser.pageLoading
     await expect(await browser.getTitle()).to.equal(text);
 });
 
-Given('que eu estou na página {string}', { timeout: browser.pageLoadingTimeout }, async (text) => {
-    await expect(await browser.getTitle()).to.equal(text);
-});
-
 When('devo clicar no botão perfil', { timeout: browser.pageLoadingTimeout }, async () => {
-    await browser.actions().mouseMove(login.buttonUser).perform().then(() => {
-      login.buttonUser.click();
-    });
+  await browser.actions().mouseMove(login.buttonUser).perform().then(() => {
+    login.buttonUser.click();
+  });
 });
 
 Given('devo clicar no botão logout {string}', { timeout: browser.pageLoadingTimeout }, async (text) => {

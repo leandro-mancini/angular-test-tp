@@ -19,11 +19,21 @@
             "keyword": "Before",
             "hidden": true,
             "match": {
-              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 3000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+            },
+            "result": {
+              "status": "passed"
             }
           },
           {
@@ -36,7 +46,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4496000000
+              "duration": 3674000000
             }
           },
           {
@@ -49,7 +59,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 486000000
+              "duration": 294000000
             }
           },
           {
@@ -62,7 +72,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 209000000
+              "duration": 191000000
             }
           },
           {
@@ -88,7 +98,341 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1016000000
+              "duration": 1024000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\support\\hooks.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Funcionalidade",
+    "name": "Motorista",
+    "line": 3,
+    "id": "motorista",
+    "tags": [],
+    "uri": "e2e\\src\\features\\F02_Motorista.feature",
+    "elements": [
+      {
+        "id": "motorista;novo-motorista",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Novo Motorista",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 6,
+            "name": "que eu estou na página 'Home'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1025000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 7,
+            "name": "devo clicar no botão 'Novo Motorista'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 422000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 8,
+            "name": "devo visualizar o dialog 'Cadastrar Motorista'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1059000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 9,
+            "name": "devo preencher o nome 'Leandro Mancini'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 694000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 10,
+            "name": "devo preencher a data de nasc. '06051988'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 11,
+            "name": "devo preencher o telefone '1199999999'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 254000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 12,
+            "name": "devo selecionar o tipo de documento 'CPF'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 140000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 13,
+            "name": "devo preencher o número '01234567890'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 260000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 14,
+            "name": "devo clicar no botão 'Salvar' e grava um novo motorista",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 658000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\support\\hooks.ts:4"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "id": "motorista;editar-motorista",
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Editar Motorista",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 17,
+            "name": "que eu estou na página 'Home'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1140000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 18,
+            "name": "devo clicar no botão 'Editar' da lista",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:31"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1811000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 19,
+            "name": "devo visualizar o dialog 'Editar Motorista'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1083000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 20,
+            "name": "devo preencher o nome 'Nome editado'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 295000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 21,
+            "name": "devo preencher o telefone '1199999999'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:61"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 237000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 22,
+            "name": "devo selecionar o tipo de documento 'CPF'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 128000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 23,
+            "name": "devo preencher o número '01234567890'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:74"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 251000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 24,
+            "name": "devo clicar no botão 'Salvar' e grava um novo motorista",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 842000000
             }
           },
           {
@@ -110,6 +454,197 @@
             "result": {
               "status": "passed",
               "duration": 1000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "motorista;inativar-motorista",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "Inativar Motorista",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 27,
+            "name": "que eu estou na página 'Home'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1439000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 28,
+            "name": "devo ativar ou inativar um item da lista",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 845000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\support\\hooks.ts:4"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "keyword": "Funcionalidade",
+    "name": "Deslogar usuario",
+    "line": 3,
+    "id": "deslogar-usuario",
+    "tags": [],
+    "uri": "e2e\\src\\features\\F03_Logout.feature",
+    "elements": [
+      {
+        "id": "deslogar-usuario;logout",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "Logout",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
+            },
+            "result": {
+              "status": "passed"
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 6,
+            "name": "que eu estou na página 'Home'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\home.spec.ts:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1029000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 7,
+            "name": "devo clicar no botão perfil",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:53"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 116000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 8,
+            "name": "devo clicar no botão logout 'SAIR'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:59"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 890000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 9,
+            "name": "sou redirecionado para a página 'Login'",
+            "match": {
+              "location": "e2e\\src\\step-definitions\\login.spec.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1058000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "e2e\\src\\support\\hooks.ts:4"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
+            },
+            "result": {
+              "status": "passed"
             }
           }
         ]
