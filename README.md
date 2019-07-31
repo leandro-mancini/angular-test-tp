@@ -185,3 +185,9 @@ Tarefas                       | Descrição
 ------------------------------|---------------------------------------------------------------------------------------
 flutter run                   | Execute o aplicativo em desenvolvimento
 flutter pub get               | Execute para instalar pacotes a partir da linha de comando
+
+### Bibliotecas
+
+- [Http](https://github.com/dart-lang/http)
+- [Toast](https://github.com/appdev/FlutterToast)
+- [Shared preferences](https://github.com/flutter/plugins/tree/master/packages/shared_preferences)
