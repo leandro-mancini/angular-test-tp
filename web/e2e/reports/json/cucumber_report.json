@@ -23,7 +23,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3000000
+              "duration": 2000000
             }
           },
           {
@@ -46,7 +46,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3674000000
+              "duration": 3942000000
             }
           },
           {
@@ -59,7 +59,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 294000000
+              "duration": 315000000
             }
           },
           {
@@ -72,7 +72,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 191000000
+              "duration": 184000000
             }
           },
           {
@@ -85,7 +85,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 179000000
+              "duration": 157000000
             }
           },
           {
@@ -98,7 +98,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1024000000
+              "duration": 1019000000
             }
           },
           {
@@ -108,8 +108,7 @@
               "location": "e2e\\src\\support\\hooks.ts:4"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -120,7 +119,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2000000
+              "duration": 1000000
             }
           }
         ]
@@ -160,7 +159,8 @@
               "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -173,7 +173,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1025000000
+              "duration": 1017000000
             }
           },
           {
@@ -186,7 +186,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 422000000
+              "duration": 258000000
             }
           },
           {
@@ -199,7 +199,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1059000000
+              "duration": 1054000000
             }
           },
           {
@@ -212,7 +212,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 694000000
+              "duration": 368000000
             }
           },
           {
@@ -225,7 +225,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 260000000
+              "duration": 189000000
             }
           },
           {
@@ -238,7 +238,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 254000000
+              "duration": 237000000
             }
           },
           {
@@ -251,7 +251,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 140000000
+              "duration": 150000000
             }
           },
           {
@@ -264,7 +264,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 260000000
+              "duration": 267000000
             }
           },
           {
@@ -277,7 +277,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 658000000
+              "duration": 663000000
             }
           },
           {
@@ -297,7 +297,8 @@
               "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           }
         ]
@@ -327,8 +328,7 @@
               "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -341,7 +341,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1140000000
+              "duration": 1248000000
             }
           },
           {
@@ -354,7 +354,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1811000000
+              "duration": 1943000000
             }
           },
           {
@@ -367,7 +367,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1083000000
+              "duration": 1055000000
             }
           },
           {
@@ -380,7 +380,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 295000000
+              "duration": 466000000
             }
           },
           {
@@ -393,7 +393,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 237000000
+              "duration": 248000000
             }
           },
           {
@@ -406,7 +406,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 128000000
+              "duration": 119000000
             }
           },
           {
@@ -419,7 +419,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 251000000
+              "duration": 288000000
             }
           },
           {
@@ -432,7 +432,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 842000000
+              "duration": 781000000
             }
           },
           {
@@ -483,8 +483,7 @@
               "location": "e2e\\src\\step-definitions\\login.spec.ts:11"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "passed"
             }
           },
           {
@@ -497,7 +496,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1439000000
+              "duration": 1445000000
             }
           },
           {
@@ -510,7 +509,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 845000000
+              "duration": 764000000
             }
           },
           {
@@ -560,7 +559,8 @@
               "location": "e2e\\src\\step-definitions\\home.spec.ts:13"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           },
           {
@@ -584,7 +584,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1029000000
+              "duration": 1024000000
             }
           },
           {
@@ -597,7 +597,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 116000000
+              "duration": 238000000
             }
           },
           {
@@ -610,7 +610,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 890000000
+              "duration": 1008000000
             }
           },
           {
@@ -623,7 +623,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1058000000
+              "duration": 1049000000
             }
           },
           {
@@ -644,7 +644,8 @@
               "location": "node_modules\\protractor-cucumber-framework\\lib\\resultsCapturer.js:26"
             },
             "result": {
-              "status": "passed"
+              "status": "passed",
+              "duration": 1000000
             }
           }
         ]
