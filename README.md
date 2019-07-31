@@ -115,15 +115,21 @@ Os processos de desenvolvimento, construção e qualidade são baseados em scrip
 
 ## Executando teste de unidade
 
-1. Inicie o servidor de test:
+1. Abra um novo terminal e inicie o servidor JSON:
+
+```bash
+npm run server
+```
+
+2. Inicie o servidor de test:
 
 ```bash
 npm run test
 ```
 
-2. Vá para a pasta do projeto web `./web/coverage`.
+3. Vá para a pasta do projeto web `./web/coverage`.
 
-3. Execute o arquivo `index.html` para poder visualizar o code covarage:
+4. Execute o arquivo `index.html` para poder visualizar o code covarage:
 
 <br>
 
@@ -131,15 +137,21 @@ npm run test
 
 ## Executando teste end-to-end
 
-1. Inicie o servidor de test:
+1. Abra um novo terminal e inicie o servidor JSON:
+
+```bash
+npm run server
+```
+
+2. Inicie o servidor de test:
 
 ```bash
 npm run e2e
 ```
 
-2. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
+3. Após ter executado todo o teste vá para a pasta do projeto web `./web/e2e/reports/html`.
 
-3. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
+4. Execute o arquivo `cucumber_reporter.html` para poder visualizar um dashboard do cucumber dos steps de cada teste.
 
 ![N|Solid](print-test-end-to-end.png)
 
