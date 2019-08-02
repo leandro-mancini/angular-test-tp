@@ -157,7 +157,7 @@ npm run e2e
 
 ## Flutter aplicativo mobile
 
-Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile [aqui](app-truckpad.apk)
+Ates de começar é preciso ter [instalado](https://flutter.dev/docs/get-started/install) em sua maquina o [flutter](https://flutter.dev), caso não queira instalar pode esta baixado o arquivo `.apk` do projeto Mobile [aqui](https://drive.google.com/file/d/100PCcE13GOQnigHfeZGz43hOF54OuV5W/view?usp=sharing)
 
 ## Execute o aplicativo
 
